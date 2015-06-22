@@ -1,0 +1,29 @@
+<h1>Listing carteleras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Genero</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carteleras.each do |cartelera| %>
+      <tr>
+        <td><%= cartelera.nombre %></td>
+        <td><%= cartelera.genero %></td>
+        <td><%= cartelera.rating %></td>
+        <td><%= link_to 'Show', cartelera %></td>
+        <td><%= link_to 'Edit', edit_cartelera_path(cartelera) %></td>
+        <td><%= link_to 'Destroy', cartelera, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cartelera', new_cartelera_path %>
